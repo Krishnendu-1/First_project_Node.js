@@ -1,8 +1,10 @@
 // console.log("hello world node.js");
 require('dotenv').config()//syntax to import .env and configure it
-const express=require('express')
+const express=require('express')//---->common javascript way to import "express"(synchronous javascript)
+// import express from 'express'//-->module javascript way to import "express" (asynchronous js)
+
 const app=express();
-const port=4000;
+const port=process.env.PORT || 3000;
 //there only two process to access the express.
 //1.we initialized by "get/post/put/delete" methods
 app.get('/',(req,res)=>{
@@ -15,6 +17,6 @@ app.get('/page',(req,res)=>{
 
 //2.the methods will then "listen" by the "Express(server)"
 //3.import PORT from .env file to make it production ready
-app.listen(process.env.PORT,(req)=>{
-     console.log(`this server that I built is working fine!!PORT:${port}`)
+app.listen(process.env.PORT,()=>{
+     console.log(`this server that I built is working fine!!PORT: http://localhost:${port}`)
 })
