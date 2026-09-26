@@ -4,7 +4,7 @@ const express=require('express')//---->common javascript way to import "express"
 // import express from 'express'//-->module javascript way to import "express" (asynchronous js)
 
 const app=express();
-const port=process.env.PORT || 3000;
+const port= 3000;
 //there only two process to access the express.
 //1.we initialized by "get/post/put/delete" methods
 app.get('/',(req,res)=>{
@@ -17,6 +17,6 @@ app.get('/page',(req,res)=>{
 
 //2.the methods will then "listen" by the "Express(server)"
 //3.import PORT from .env file to make it production ready
-app.listen(process.env.PORT,()=>{
+app.listen(3000, '0.0.0.0', ()=>{
      console.log(`this server that I built is working fine!!PORT: http://localhost:${port}`)
 })
