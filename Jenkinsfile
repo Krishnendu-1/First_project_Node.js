@@ -2,6 +2,10 @@ pipeline {
 
     agent any
 
+    tools {
+        nodejs 'node-26'
+    }
+
     environment {
         AWS_REGION = 'us-east-1'
         ECR_REPO   = 'my-node-app'
